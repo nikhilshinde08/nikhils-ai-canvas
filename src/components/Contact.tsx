@@ -1,0 +1,208 @@
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { 
+  Mail, 
+  Phone, 
+  MapPin, 
+  Github, 
+  Linkedin, 
+  Twitter, 
+  Send,
+  Calendar,
+  MessageSquare
+} from "lucide-react";
+
+const Contact = () => {
+  const contactInfo = [
+    {
+      icon: Mail,
+      label: "Email",
+      value: "nikhil@example.com",
+      href: "mailto:nikhil@example.com"
+    },
+    {
+      icon: Phone,
+      label: "Phone",
+      value: "+1 (555) 123-4567",
+      href: "tel:+15551234567"
+    },
+    {
+      icon: MapPin,
+      label: "Location",
+      value: "San Francisco, CA",
+      href: "#"
+    }
+  ];
+
+  const socialLinks = [
+    {
+      icon: Github,
+      label: "GitHub",
+      href: "https://github.com/nikhil",
+      username: "@nikhil"
+    },
+    {
+      icon: Linkedin,
+      label: "LinkedIn",
+      href: "https://linkedin.com/in/nikhil",
+      username: "/in/nikhil"
+    },
+    {
+      icon: Twitter,
+      label: "Twitter",
+      href: "https://twitter.com/nikhil",
+      username: "@nikhil_ai"
+    }
+  ];
+
+  return (
+    <section id="contact" className="py-20 bg-secondary/20">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
+            Let's Connect
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Ready to collaborate on your next AI project? I'd love to hear from you. 
+            Whether it's a consultation, partnership, or just a chat about technology.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          {/* Contact Form */}
+          <Card className="bg-card/50 backdrop-blur-sm border-border/50">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <MessageSquare className="h-5 w-5 text-primary" />
+                Send a Message
+              </CardTitle>
+              <CardDescription>
+                Drop me a line and I'll get back to you as soon as possible.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="firstName">First Name</Label>
+                  <Input id="firstName" placeholder="John" />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="lastName">Last Name</Label>
+                  <Input id="lastName" placeholder="Doe" />
+                </div>
+              </div>
+              
+              <div className="space-y-2">
+                <Label htmlFor="email">Email</Label>
+                <Input id="email" type="email" placeholder="john@example.com" />
+              </div>
+              
+              <div className="space-y-2">
+                <Label htmlFor="subject">Subject</Label>
+                <Input id="subject" placeholder="Project Collaboration" />
+              </div>
+              
+              <div className="space-y-2">
+                <Label htmlFor="message">Message</Label>
+                <Textarea 
+                  id="message" 
+                  placeholder="Tell me about your project..."
+                  className="min-h-[120px]"
+                />
+              </div>
+              
+              <Button variant="hero" className="w-full">
+                <Send className="mr-2 h-4 w-4" />
+                Send Message
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Contact Info & Social */}
+          <div className="space-y-8">
+            {/* Quick Contact */}
+            <Card className="bg-card/50 backdrop-blur-sm border-border/50">
+              <CardHeader>
+                <CardTitle>Get in Touch</CardTitle>
+                <CardDescription>
+                  Prefer a more direct approach? Here are the best ways to reach me.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {contactInfo.map((contact, index) => (
+                  <a
+                    key={index}
+                    href={contact.href}
+                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary/50 transition-colors duration-300 group"
+                  >
+                    <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors duration-300">
+                      <contact.icon className="h-4 w-4 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-medium group-hover:text-primary transition-colors duration-300">
+                        {contact.label}
+                      </p>
+                      <p className="text-sm text-muted-foreground">{contact.value}</p>
+                    </div>
+                  </a>
+                ))}
+              </CardContent>
+            </Card>
+
+            {/* Social Links */}
+            <Card className="bg-card/50 backdrop-blur-sm border-border/50">
+              <CardHeader>
+                <CardTitle>Follow Me</CardTitle>
+                <CardDescription>
+                  Connect with me on social media for updates and insights.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary/50 transition-colors duration-300 group"
+                  >
+                    <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors duration-300">
+                      <social.icon className="h-4 w-4 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-medium group-hover:text-primary transition-colors duration-300">
+                        {social.label}
+                      </p>
+                      <p className="text-sm text-muted-foreground">{social.username}</p>
+                    </div>
+                  </a>
+                ))}
+              </CardContent>
+            </Card>
+
+            {/* Schedule Meeting */}
+            <Card className="bg-gradient-primary p-[1px] rounded-lg">
+              <div className="bg-card/90 backdrop-blur-sm rounded-[7px] p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <Calendar className="h-5 w-5 text-primary" />
+                  <h3 className="font-semibold">Schedule a Meeting</h3>
+                </div>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Ready for a deeper conversation? Let's schedule a video call to discuss your project in detail.
+                </p>
+                <Button variant="hero" className="w-full">
+                  Book a Call
+                </Button>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;
