@@ -43,7 +43,7 @@ const About = () => {
             About Me
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            I'm a freelance AI consultant helping businesses harness the power of artificial intelligence. 
+            I'm an AI consultant helping businesses harness the power of artificial intelligence. 
             With 5+ years of experience delivering AI solutions for startups to Fortune 500 companies, 
             I turn complex AI concepts into practical, revenue-generating solutions.
           </p>

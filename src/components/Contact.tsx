@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { useState } from "react";
 import { 
   Mail, 
   Phone, 
@@ -13,9 +14,71 @@ import {
   Send,
   Calendar,
   MessageSquare
+  CheckCircle,
+  AlertCircle
 } from "lucide-react";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    
+    try {
+      // EmailJS template parameters
+      const templateParams = {
+        from_name: `${formData.firstName} ${formData.lastName}`,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: 'nikhilbshinde34@gmail.com'
+      };
+
+      // Send email using EmailJS
+      await emailjs.send(
+        'service_xigi4fc',    // Your Service ID
+        'template_u9nq9vp',   // Your Template ID
+        templateParams,
+        'RoihT2mAhd7GEBsfA'   // Your Public Key
+      );
+
+      setSubmitStatus('success');
+      // Reset form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Email send failed:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+      // Reset status after 3 seconds
+      setTimeout(() => setSubmitStatus('idle'), 3000);
+    }
+  };
   const contactInfo = [
     {
       icon: Mail,
@@ -84,42 +147,106 @@ const Contact = () => {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="firstName">First Name</Label>
-                  <Input id="firstName" placeholder="John" />
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="firstName">First Name</Label>
+                    <Input 
+                      id="firstName" 
+                      placeholder="John" 
+                      value={formData.firstName}
+                      onChange={handleInputChange}
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="lastName">Last Name</Label>
+                    <Input 
+                      id="lastName" 
+                      placeholder="Doe" 
+                      value={formData.lastName}
+                      onChange={handleInputChange}
+                      required
+                    />
+                  </div>
                 </div>
+                
                 <div className="space-y-2">
-                  <Label htmlFor="lastName">Last Name</Label>
-                  <Input id="lastName" placeholder="Doe" />
+                  <Label htmlFor="email">Email</Label>
+                  <Input 
+                    id="email" 
+                    type="email" 
+                    placeholder="john@example.com" 
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                  />
                 </div>
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="john@example.com" />
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="subject">Project Type</Label>
-                <Input id="subject" placeholder="AI Consultation, Custom Development, etc." />
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="message">Message</Label>
-                <Textarea 
-                  id="message" 
-                  placeholder="Describe your business challenge and how AI might help solve it..."
-                  className="min-h-[120px]"
-                />
-              </div>
-              
-              <Button variant="hero" className="w-full" asChild>
-                <a href="https://calendly.com/nikhilbshinde33" target="_blank" rel="noopener noreferrer">
-                  <Send className="mr-2 h-4 w-4" />
-                  Get Free Consultation
-                </a>
-              </Button>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="subject">Project Type</Label>
+                  <Input 
+                    id="subject" 
+                    placeholder="AI Consultation, Custom Development, etc." 
+                    value={formData.subject}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="message">Message</Label>
+                  <Textarea 
+                    id="message" 
+                    placeholder="Describe your business challenge and how AI might help solve it..."
+                    className="min-h-[120px]"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+                
+                <Button 
+                  type="submit" 
+                  variant="hero" 
+                  className="w-full" 
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-background border-t-transparent" />
+                      Sending...
+                    </>
+                  ) : submitStatus === 'success' ? (
+                    <>
+                      <CheckCircle className="mr-2 h-4 w-4" />
+                      Message Sent!
+                    </>
+                  ) : submitStatus === 'error' ? (
+                    <>
+                      <AlertCircle className="mr-2 h-4 w-4" />
+                      Try Again
+                    </>
+                  ) : (
+                    <>
+                      <Send className="mr-2 h-4 w-4" />
+                      Send Message
+                    </>
+                  )}
+                </Button>
+                
+                {submitStatus === 'success' && (
+                  <div className="text-center text-sm text-green-600 dark:text-green-400 mt-2">
+                    Thank you! Your message has been sent successfully. I'll get back to you soon.
+                  </div>
+                )}
+                
+                {submitStatus === 'error' && (
+                  <div className="text-center text-sm text-red-600 dark:text-red-400 mt-2">
+                    Sorry, there was an error sending your message. Please try again or contact me directly.
+                  </div>
+                )}
+              </form>
             </CardContent>
           </Card>
 
@@ -197,6 +324,7 @@ const Contact = () => {
                 </p>
                 <Button variant="hero" className="w-full" asChild>
                   <a href="https://calendly.com/nikhilbshinde33" target="_blank" rel="noopener noreferrer">
+                    <Calendar className="mr-2 h-4 w-4" />
                     Book Free Consultation
                   </a>
                 </Button>

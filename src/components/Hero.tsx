@@ -30,12 +30,12 @@ const Hero = () => {
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="mb-8">
           <Badge variant="outline" className="mb-6 px-4 py-2 text-lg border-primary/50 bg-primary/10">
-            🚀 Freelance AI Consultant
+            🚀 AI Consultant
           </Badge>
         </div>
 
         <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent animate-in slide-in-from-bottom-4 duration-1000">
-          Nikhil
+          Nikhil Shinde
         </h1>
 
         <div className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-in slide-in-from-bottom-8 duration-1000 delay-200">

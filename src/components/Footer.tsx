@@ -25,7 +25,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <h3 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              Nikhil.AI
+              Nikhil.shinde@AI
             </h3>
             <p className="text-muted-foreground">
               AI Engineer passionate about building intelligent solutions that make a difference.
@@ -91,7 +91,7 @@ const Footer = () => {
         {/* Bottom */}
         <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm mb-4 md:mb-0">
-            © {currentYear} Nikhil. All rights reserved.
+            © {currentYear} Nikhil Shinde. All rights reserved.
           </p>
         </div>
       </div>
