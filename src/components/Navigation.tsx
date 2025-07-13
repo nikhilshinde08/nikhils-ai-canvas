@@ -38,13 +38,9 @@ const Navigation = () => {
           {/* Logo */}
           <button
             onClick={() => scrollToSection('hero')}
-            className="hover:scale-105 transition-transform duration-300"
+            className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent hover:scale-105 transition-transform duration-300"
           >
-            <img 
-              src="/nikhil_ai.png" 
-              alt="Nikhil.shinde@AI" 
-              className="h-16 w-auto md:h-24 rounded-lg bg-white/10 p-1 border border-primary/20"
-            />
+            Nikhil.shinde@AI
           </button>
 
           {/* Desktop Navigation */}
