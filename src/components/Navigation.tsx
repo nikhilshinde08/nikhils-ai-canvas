@@ -43,7 +43,7 @@ const Navigation = () => {
             <img 
               src="/nikhil_ai.png" 
               alt="Nikhil.shinde@AI" 
-              className="h-12 w-auto md:h-14"
+              className="h-16 w-auto md:h-24 rounded-lg bg-white/10 p-1 border border-primary/20"
             />
           </button>
 
