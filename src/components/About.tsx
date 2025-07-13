@@ -4,9 +4,12 @@ import { Brain, Code, Database, Zap } from "lucide-react";
 
 const About = () => {
   const skills = [
+    "Generative AI", "RAG", "Agentic RAG", "LangChain", "LlamaIndex", "OpenAI GPT",
     "Machine Learning", "Deep Learning", "Python", "TensorFlow", "PyTorch",
-    "Natural Language Processing", "Computer Vision", "MLOps", "AWS", "Docker",
-    "React", "Node.js", "PostgreSQL", "MongoDB", "Kubernetes"
+    "Natural Language Processing", "Computer Vision", "MLOps", "AWS", "Azure AI",
+    "Google Cloud AI", "Azure OpenAI", "Vertex AI", "CrewAI", "AutoGen",
+    "Vector Databases", "Pinecone", "ChromaDB", "Docker", "Kubernetes",
+    "React", "Node.js", "PostgreSQL", "MongoDB", "FastAPI", "Streamlit"
   ];
 
   const expertiseAreas = [

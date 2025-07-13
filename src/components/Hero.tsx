@@ -65,25 +65,33 @@ const Hero = () => {
         </div>
 
         {/* Social Links */}
-        <div className="flex justify-center space-x-6 mb-12 animate-in slide-in-from-bottom-16 duration-1000 delay-600">
-          <Button variant="ghost" size="icon" className="rounded-full hover:bg-primary/10">
-            <Github className="h-5 w-5" />
+        <div className="flex justify-center space-x-6 mb-8 animate-in slide-in-from-bottom-16 duration-1000 delay-600">
+          <Button variant="ghost" size="lg" className="rounded-full hover:bg-primary/10 p-4" asChild>
+            <a href="https://github.com/nikhilshinde08" target="_blank" rel="noopener noreferrer">
+              <Github className="h-7 w-7" />
+            </a>
           </Button>
-          <Button variant="ghost" size="icon" className="rounded-full hover:bg-primary/10">
-            <Linkedin className="h-5 w-5" />
+          <Button variant="ghost" size="lg" className="rounded-full hover:bg-primary/10 p-4" asChild>
+            <a href="https://www.linkedin.com/in/nikhil-shinde33/" target="_blank" rel="noopener noreferrer">
+              <Linkedin className="h-7 w-7" />
+            </a>
           </Button>
-          <Button variant="ghost" size="icon" className="rounded-full hover:bg-primary/10">
-            <Twitter className="h-5 w-5" />
+          <Button variant="ghost" size="lg" className="rounded-full hover:bg-primary/10 p-4" asChild>
+            <a href="https://twitter.com/nikhilbshinde619" target="_blank" rel="noopener noreferrer">
+              <Twitter className="h-7 w-7" />
+            </a>
           </Button>
         </div>
 
         {/* Scroll indicator */}
-        <button
-          onClick={() => scrollToSection('about')}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
-        >
-          <ChevronDown className="h-8 w-8 text-primary" />
-        </button>
+        <div className="flex justify-center">
+          <button
+            onClick={() => scrollToSection('about')}
+            className="animate-bounce hover:text-primary transition-colors duration-300"
+          >
+            <ChevronDown className="h-8 w-8 text-primary" />
+          </button>
+        </div>
       </div>
     </section>
   );

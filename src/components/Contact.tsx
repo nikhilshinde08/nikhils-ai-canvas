@@ -20,19 +20,19 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "nikhil@example.com",
-      href: "mailto:nikhil@example.com"
+      value: "nikhilbshinde34@gmail.com",
+      href: "mailto:nikhilbshinde34@gmail.com"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "+91 7494949582",
+      href: "tel:+917494949582"
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "San Francisco, CA",
+      value: "Pune, India",
       href: "#"
     }
   ];
@@ -41,20 +41,20 @@ const Contact = () => {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com/nikhil",
-      username: "@nikhil"
+      href: "https://github.com/nikhilshinde08",
+      username: "@nikhilshinde08"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/nikhil",
-      username: "/in/nikhil"
+      href: "https://www.linkedin.com/in/nikhil-shinde33/",
+      username: "/in/nikhil-shinde33"
     },
     {
       icon: Twitter,
       label: "Twitter",
-      href: "https://twitter.com/nikhil",
-      username: "@nikhil_ai"
+      href: "https://twitter.com/nikhilbshinde619",
+      username: "@nikhilbshinde619"
     }
   ];
 
@@ -114,9 +114,11 @@ const Contact = () => {
                 />
               </div>
               
-              <Button variant="hero" className="w-full">
-                <Send className="mr-2 h-4 w-4" />
-                Get Free Consultation
+              <Button variant="hero" className="w-full" asChild>
+                <a href="https://calendly.com/nikhilbshinde33" target="_blank" rel="noopener noreferrer">
+                  <Send className="mr-2 h-4 w-4" />
+                  Get Free Consultation
+                </a>
               </Button>
             </CardContent>
           </Card>
@@ -193,8 +195,10 @@ const Contact = () => {
                 <p className="text-sm text-muted-foreground mb-4">
                   Ready to explore how AI can transform your business? Let's schedule a free 30-minute consultation to discuss your needs.
                 </p>
-                <Button variant="hero" className="w-full">
-                  Book Free Consultation
+                <Button variant="hero" className="w-full" asChild>
+                  <a href="https://calendly.com/nikhilbshinde33" target="_blank" rel="noopener noreferrer">
+                    Book Free Consultation
+                  </a>
                 </Button>
               </div>
             </Card>

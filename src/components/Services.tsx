@@ -22,7 +22,6 @@ const Services = () => {
       title: "AI Strategy & Consulting",
       description: "Navigate the AI landscape with expert guidance. I help you identify opportunities and create a roadmap for AI implementation.",
       features: ["AI Readiness Assessment", "Technology Stack Selection", "ROI Analysis", "Implementation Roadmap"],
-      price: "Starting at $2,500",
       duration: "2-4 weeks"
     },
     {
@@ -30,7 +29,6 @@ const Services = () => {
       title: "Custom AI Development",
       description: "End-to-end AI solution development tailored to your business needs. From prototypes to production-ready systems.",
       features: ["Machine Learning Models", "MLOps Pipeline Setup", "API Development", "Cloud Deployment"],
-      price: "Starting at $5,000",
       duration: "4-12 weeks"
     },
     {
@@ -38,7 +36,6 @@ const Services = () => {
       title: "Data Engineering & MLOps",
       description: "Build robust data infrastructure and ML operations to scale your AI initiatives efficiently.",
       features: ["Data Pipeline Design", "Model Monitoring", "A/B Testing Setup", "Performance Optimization"],
-      price: "Starting at $3,500",
       duration: "3-8 weeks"
     },
     {
@@ -46,7 +43,6 @@ const Services = () => {
       title: "AI Integration & Automation",
       description: "Seamlessly integrate AI into your existing workflows and automate business processes.",
       features: ["API Integration", "Workflow Automation", "Legacy System Updates", "Training & Documentation"],
-      price: "Starting at $2,000",
       duration: "2-6 weeks"
     }
   ];
@@ -107,9 +103,6 @@ const Services = () => {
                       <div className="flex items-center gap-2 mt-1">
                         <Badge variant="outline" className="text-xs">
                           {service.duration}
-                        </Badge>
-                        <Badge variant="default" className="text-xs">
-                          {service.price}
                         </Badge>
                       </div>
                     </div>

@@ -5,10 +5,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   const socialLinks = [
-    { icon: Github, href: "https://github.com/nikhil", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com/in/nikhil", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com/nikhil", label: "Twitter" },
-    { icon: Mail, href: "mailto:nikhil@example.com", label: "Email" },
+    { icon: Github, href: "https://github.com/nikhilshinde08", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/nikhil-shinde33/", label: "LinkedIn" },
+    { icon: Twitter, href: "https://twitter.com/nikhilbshinde619", label: "Twitter" },
+    { icon: Mail, href: "mailto:nikhilbshinde34@gmail.com", label: "Email" },
   ];
 
   const quickLinks = [
@@ -92,9 +92,6 @@ const Footer = () => {
         <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm mb-4 md:mb-0">
             © {currentYear} Nikhil. All rights reserved.
-          </p>
-          <p className="text-muted-foreground text-sm flex items-center gap-1">
-            Made with <Heart className="h-4 w-4 text-red-500" /> and AI
           </p>
         </div>
       </div>

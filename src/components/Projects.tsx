@@ -17,26 +17,26 @@ const Projects = () => {
       result: "35% increase in sales"
     },
     {
-      title: "Manufacturing Quality Control AI",
-      description: "Deployed computer vision system that reduced defect rates by 60% and saved $2M annually in quality costs.",
-      technologies: ["PyTorch", "OpenCV", "Docker", "Azure", "MLOps"],
+      title: "Agentic AI Development Platform",
+      description: "Developed problem-based solutions using Agentic AI that automated complex workflows and decision-making processes.",
+      technologies: ["LangChain", "CrewAI", "OpenAI", "FastAPI", "PostgreSQL"],
       icon: Camera,
       github: "#",
       demo: "#",
       featured: true,
-      client: "Manufacturing Company",
-      result: "$2M annual savings"
+      client: "Tech Startup",
+      result: "80% workflow automation"
     },
     {
-      title: "Financial Fraud Detection System",
-      description: "Built ML system that detects fraudulent transactions with 99.2% accuracy, processing 1M+ transactions daily.",
-      technologies: ["Python", "Scikit-learn", "Kafka", "MongoDB", "Kubernetes"],
+      title: "Marketing & Sales AI Assistant",
+      description: "Built Agentic AI system that optimized marketing campaigns and sales processes, increasing conversion rates significantly.",
+      technologies: ["AutoGen", "LangGraph", "Pinecone", "Streamlit", "OpenAI"],
       icon: BarChart3,
       github: "#",
       demo: "#",
       featured: false,
-      client: "FinTech Startup",
-      result: "99.2% accuracy"
+      client: "E-commerce Company",
+      result: "45% conversion boost"
     },
     {
       title: "Healthcare Diagnostic Assistant",
