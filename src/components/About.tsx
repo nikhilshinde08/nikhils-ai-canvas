@@ -12,23 +12,23 @@ const About = () => {
   const expertiseAreas = [
     {
       icon: Brain,
-      title: "AI & Machine Learning",
-      description: "Building intelligent systems with advanced ML algorithms and neural networks."
+      title: "AI Strategy & Implementation",
+      description: "Helping businesses identify AI opportunities and build intelligent solutions that drive ROI."
     },
     {
       icon: Code,
-      title: "Software Development",
-      description: "Full-stack development with modern frameworks and cloud technologies."
+      title: "Custom AI Development",
+      description: "End-to-end development of machine learning models and AI-powered applications."
     },
     {
       icon: Database,
-      title: "Data Engineering",
-      description: "Designing robust data pipelines and scalable infrastructure solutions."
+      title: "Data Engineering & MLOps",
+      description: "Building robust data pipelines and ML operations for scalable AI systems."
     },
     {
       icon: Zap,
-      title: "MLOps & Automation",
-      description: "Streamlining ML workflows with CI/CD and automated deployment pipelines."
+      title: "AI Integration & Consulting",
+      description: "Seamlessly integrating AI into existing workflows and providing strategic guidance."
     }
   ];
 
@@ -40,8 +40,9 @@ const About = () => {
             About Me
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            I'm passionate about leveraging artificial intelligence to solve complex problems and create innovative solutions. 
-            With expertise in machine learning, software engineering, and data science, I build systems that make a difference.
+            I'm a freelance AI consultant helping businesses harness the power of artificial intelligence. 
+            With 5+ years of experience delivering AI solutions for startups to Fortune 500 companies, 
+            I turn complex AI concepts into practical, revenue-generating solutions.
           </p>
         </div>
 

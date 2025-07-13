@@ -6,40 +6,48 @@ import { Github, ExternalLink, Bot, Camera, BarChart3, Cpu } from "lucide-react"
 const Projects = () => {
   const projects = [
     {
-      title: "AI Chatbot Platform",
-      description: "Built an intelligent conversational AI platform using GPT-4 and custom training data, serving 10k+ users daily.",
-      technologies: ["Python", "FastAPI", "OpenAI", "PostgreSQL", "Docker"],
+      title: "E-commerce Recommendation Engine",
+      description: "Increased client's sales by 35% with a personalized product recommendation system. Reduced customer acquisition cost by 40%.",
+      technologies: ["Python", "TensorFlow", "AWS", "PostgreSQL", "Redis"],
       icon: Bot,
-      github: "https://github.com",
-      demo: "https://demo.com",
-      featured: true
+      github: "#",
+      demo: "#",
+      featured: true,
+      client: "Online Retailer",
+      result: "35% increase in sales"
     },
     {
-      title: "Computer Vision Pipeline",
-      description: "Developed a real-time object detection system with 95% accuracy for autonomous vehicle applications.",
-      technologies: ["TensorFlow", "OpenCV", "Python", "AWS", "Kubernetes"],
+      title: "Manufacturing Quality Control AI",
+      description: "Deployed computer vision system that reduced defect rates by 60% and saved $2M annually in quality costs.",
+      technologies: ["PyTorch", "OpenCV", "Docker", "Azure", "MLOps"],
       icon: Camera,
-      github: "https://github.com",
-      demo: "https://demo.com",
-      featured: true
+      github: "#",
+      demo: "#",
+      featured: true,
+      client: "Manufacturing Company",
+      result: "$2M annual savings"
     },
     {
-      title: "ML Analytics Dashboard",
-      description: "Created a comprehensive analytics platform for ML model monitoring and performance tracking.",
-      technologies: ["React", "D3.js", "Python", "MLflow", "MongoDB"],
+      title: "Financial Fraud Detection System",
+      description: "Built ML system that detects fraudulent transactions with 99.2% accuracy, processing 1M+ transactions daily.",
+      technologies: ["Python", "Scikit-learn", "Kafka", "MongoDB", "Kubernetes"],
       icon: BarChart3,
-      github: "https://github.com",
-      demo: "https://demo.com",
-      featured: false
+      github: "#",
+      demo: "#",
+      featured: false,
+      client: "FinTech Startup",
+      result: "99.2% accuracy"
     },
     {
-      title: "Neural Network Optimizer",
-      description: "Developed an automated hyperparameter tuning system that reduced training time by 40%.",
-      technologies: ["PyTorch", "Optuna", "Ray", "Docker", "GCP"],
+      title: "Healthcare Diagnostic Assistant",
+      description: "Developed AI tool that assists doctors in diagnosis, reducing diagnostic time by 50% while maintaining 95% accuracy.",
+      technologies: ["TensorFlow", "FastAPI", "GCP", "PostgreSQL", "React"],
       icon: Cpu,
-      github: "https://github.com",
-      demo: "https://demo.com",
-      featured: false
+      github: "#",
+      demo: "#",
+      featured: false,
+      client: "Healthcare Provider",
+      result: "50% faster diagnosis"
     }
   ];
 
@@ -48,11 +56,11 @@ const Projects = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-            Featured Projects
+            Client Success Stories
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A showcase of my recent work in AI, machine learning, and software development.
-            Each project demonstrates my commitment to innovation and technical excellence.
+            Real results for real businesses. Here are some of the AI solutions I've delivered 
+            for my clients, driving measurable growth and competitive advantage.
           </p>
         </div>
 
@@ -74,11 +82,19 @@ const Projects = () => {
                       <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">
                         {project.title}
                       </CardTitle>
-                      {project.featured && (
-                        <Badge variant="default" className="mt-1">
-                          Featured
+                      <div className="flex items-center gap-2 mt-1">
+                        {project.featured && (
+                          <Badge variant="default" className="text-xs">
+                            Featured
+                          </Badge>
+                        )}
+                        <Badge variant="outline" className="text-xs">
+                          {project.client}
                         </Badge>
-                      )}
+                        <Badge variant="secondary" className="text-xs text-primary">
+                          {project.result}
+                        </Badge>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -101,17 +117,13 @@ const Projects = () => {
                 </div>
 
                 <div className="flex gap-3 pt-4">
-                  <Button variant="outline" size="sm" asChild>
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <Github className="mr-2 h-4 w-4" />
-                      Code
-                    </a>
+                  <Button variant="outline" size="sm" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Similar Project?
                   </Button>
-                  <Button variant="default" size="sm" asChild>
-                    <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      Live Demo
-                    </a>
+                  <Button variant="default" size="sm" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+                    <Github className="mr-2 h-4 w-4" />
+                    Hire Me
                   </Button>
                 </div>
               </CardContent>
@@ -120,9 +132,9 @@ const Projects = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="outline" size="lg">
+          <Button variant="outline" size="lg" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
             <Github className="mr-2 h-5 w-5" />
-            View All Projects on GitHub
+            Start Your Project
           </Button>
         </div>
       </div>

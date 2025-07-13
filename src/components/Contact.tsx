@@ -63,11 +63,11 @@ const Contact = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-            Let's Connect
+            Ready to Transform Your Business?
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to collaborate on your next AI project? I'd love to hear from you. 
-            Whether it's a consultation, partnership, or just a chat about technology.
+            Let's discuss how AI can drive your business forward. I'm currently accepting new clients 
+            and would love to help you achieve your goals with intelligent solutions.
           </p>
         </div>
 
@@ -101,22 +101,22 @@ const Contact = () => {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="subject">Subject</Label>
-                <Input id="subject" placeholder="Project Collaboration" />
+                <Label htmlFor="subject">Project Type</Label>
+                <Input id="subject" placeholder="AI Consultation, Custom Development, etc." />
               </div>
               
               <div className="space-y-2">
                 <Label htmlFor="message">Message</Label>
                 <Textarea 
                   id="message" 
-                  placeholder="Tell me about your project..."
+                  placeholder="Describe your business challenge and how AI might help solve it..."
                   className="min-h-[120px]"
                 />
               </div>
               
               <Button variant="hero" className="w-full">
                 <Send className="mr-2 h-4 w-4" />
-                Send Message
+                Get Free Consultation
               </Button>
             </CardContent>
           </Card>
@@ -191,10 +191,10 @@ const Contact = () => {
                   <h3 className="font-semibold">Schedule a Meeting</h3>
                 </div>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Ready for a deeper conversation? Let's schedule a video call to discuss your project in detail.
+                  Ready to explore how AI can transform your business? Let's schedule a free 30-minute consultation to discuss your needs.
                 </p>
                 <Button variant="hero" className="w-full">
-                  Book a Call
+                  Book Free Consultation
                 </Button>
               </div>
             </Card>

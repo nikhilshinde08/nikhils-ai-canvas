@@ -30,7 +30,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="mb-8">
           <Badge variant="outline" className="mb-6 px-4 py-2 text-lg border-primary/50 bg-primary/10">
-            👨‍💻 AI Engineer
+            🚀 Freelance AI Consultant
           </Badge>
         </div>
 
@@ -39,8 +39,8 @@ const Hero = () => {
         </h1>
 
         <div className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-in slide-in-from-bottom-8 duration-1000 delay-200">
-          <p className="mb-4">Crafting intelligent solutions with cutting-edge AI technology.</p>
-          <p>Transforming ideas into reality through machine learning and innovation.</p>
+          <p className="mb-4">Available for hire • Building AI solutions for ambitious businesses</p>
+          <p>From concept to deployment - I help startups and enterprises leverage AI to drive growth.</p>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-in slide-in-from-bottom-12 duration-1000 delay-400">
@@ -51,15 +51,16 @@ const Hero = () => {
             className="w-full sm:w-auto"
           >
             <Mail className="mr-2 h-5 w-5" />
-            Get In Touch
+            Hire Me
           </Button>
           <Button 
             variant="outline" 
             size="lg"
+            onClick={() => scrollToSection('services')}
             className="w-full sm:w-auto"
           >
             <Download className="mr-2 h-5 w-5" />
-            Download Resume
+            View Services
           </Button>
         </div>
 
