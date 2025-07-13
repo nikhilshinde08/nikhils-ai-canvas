@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ChevronDown, Download, Mail, Github, Linkedin, Twitter } from "lucide-react";
+import { ChevronDown, Download, Mail, Github, Linkedin, Twitter, FileText } from "lucide-react";
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -61,6 +61,21 @@ const Hero = () => {
           >
             <Download className="mr-2 h-5 w-5" />
             View Services
+          </Button>
+          <Button 
+            variant="outline" 
+            size="lg"
+            asChild
+            className="w-full sm:w-auto"
+          >
+            <a 
+              href="https://drive.google.com/file/d/1xREM38EJbOpp3b8Qdib_JTyTShVvEXAH/view?usp=sharing" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <FileText className="mr-2 h-5 w-5" />
+              Resume
+            </a>
           </Button>
         </div>
 
